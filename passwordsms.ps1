@@ -1,6 +1,6 @@
 ﻿param([string]$username)
 Import-Module ActiveDirectory
-$username = 'rufat.test'
+#$username = 'rufat.test'
 $lower = ("abcdefghijklmnopqrstuvwxyz".ToCharArray() | Sort-Object {Get-Random})[0..2] -Join ''
 $upper = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray() | Sort-Object {Get-Random})[0..2] -Join ''
 $digits = ("0123456789".ToCharArray() | Sort-Object {Get-Random})[0..1] -Join ''
@@ -15,20 +15,20 @@ $user = Get-ADUser $username -Properties *
 $number = ''
 if ($user.MobilePhone -ne $null) {
     $number = $user.MobilePhone
-    Write-Host "Public Mobile Phone $number is used for user $username $passwd" -ForegroundColor Green
+    Write-Host "Public Mobile Phone $number is used for user $username. Password =  $passwd" -ForegroundColor Green
 } elseif ($user.privateMobileNumber -ne $null) {
     $number = $user.privateMobileNumber
-    Write-Host "Private Mobile Phone $number is used for user $username $passwd" -ForegroundColor Green
+    Write-Host "Private Mobile Phone $number is used for user $username. Password =  $passwd" -ForegroundColor Green
 } else {
     Write-Host "No Mobile Numbers Found" -ForegroundColor Red
     exit
 }
 
     $text1 =  "Your new password is: "
-    $text2 = "In case of support contact +944123100838 EXT=200 "
+    $text2 = "In case of support contact +XXXxxxXXX EXT=XXXX "
     $message = '"' + $text1 + $passwd + '==== ' + $text2 + ' ==== ' + '"'
-    $gsmhost = "172.16.11.8"
-    $gsmport = "5038"
+    $gsmhost = "XXX.XXX.XXX.XXX"
+    $gsmport = "XXX"
 
     $tcpconnection = New-Object System.Net.Sockets.TcpClient ($gsmhost, $gsmport)
     $tcpStream = $tcpConnection.GetStream()
