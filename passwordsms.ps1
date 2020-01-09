@@ -1,4 +1,5 @@
-﻿param([string]$username)
+#This Scirpt uses custom AD attribute (privateMobileNumber) and GSM gateway based on Asterisk Platform.
+param([string]$username)
 Import-Module ActiveDirectory
 #$username = 'rufat.test'
 $lower = ("abcdefghijklmnopqrstuvwxyz".ToCharArray() | Sort-Object {Get-Random})[0..2] -Join ''
