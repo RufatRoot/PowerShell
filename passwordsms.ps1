@@ -27,7 +27,7 @@ if ($user.MobilePhone -ne $null) {
 
     $text1 =  "Your new password is: "
     $text2 = "In case of support contact +XXXxxxXXX EXT=XXXX "
-    $message = '"' + $text1 + $passwd + '==== ' + $text2 + ' ==== ' + '"'
+    $message = '"' + $text1 + $passwd + ' ==== ' + $text2 + ' ==== ' + '"'
     $gsmhost = "XXX.XXX.XXX.XXX"
     $gsmport = "XXX"
 
