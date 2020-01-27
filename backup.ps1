@@ -6,7 +6,7 @@ Param(
         #Backup location
             [Parameter(Mandatory)]
             [String]$Backuplocation = '',
-        #Define you storage limit (MB or GB)
+        #Define your storage limit (MB or GB)
             [Parameter(Mandatory)]
             $Sizelimit="",
         #Temp Location to copy files
